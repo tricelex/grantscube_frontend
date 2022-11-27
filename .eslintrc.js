@@ -14,6 +14,7 @@ module.exports = {
   plugins: ['react'],
   rules: {
     'jsx-quotes': ['error', 'prefer-single'],
+    'arrow-body-style': ['error', 'as-needed'],
     'no-console': 0,
     'jsx-a11y/label-has-associated-control': 0,
     'no-nested-ternary': 0,
