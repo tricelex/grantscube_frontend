@@ -6,10 +6,7 @@ import { create as ipfsHttpClient } from 'ipfs-http-client';
 
 import { ProjectFactoryAddress, ProjectFactoryAddressABI } from './constants';
 
-const projectId = process.env.NEXT_IPFS_PROJECT_ID;
-const projectSecret = process.env.NEXT_IPFS_PROJECT_SECRET;
-
-const auth = `Basic ${Buffer.from(`${projectId}:${projectSecret}`).toString('base64')}`;
+const auth = `Basic ${Buffer.from(`${process.env.NEXT_PUBLIC_INFURA_PROJECT_ID}:${process.env.NEXT_PUBLIC_INFURA_PROJECT_SECRET}`).toString('base64')}`;
 const client = ipfsHttpClient({
   host: 'infura-ipfs.io',
   port: 5001,
@@ -18,7 +15,6 @@ const client = ipfsHttpClient({
     authorization: auth,
   },
 });
-
 const fetchProjectContract = (signerOrProvider) => new ethers.Contract(ProjectFactoryAddress, ProjectFactoryAddressABI, signerOrProvider);
 
 export const ProjectContext = React.createContext();
@@ -100,8 +96,8 @@ export const ProjectProvider = ({ children }) => {
 
   const fetchProjects = async () => {
     setIsLoadingProjects(false);
-
-    const provider = new ethers.providers.JsonRpcProvider();
+    const url = 'https://rpc.public.zkevm-test.net/';
+    const provider = new ethers.providers.JsonRpcProvider(url);
     const contract = fetchProjectContract(provider);
 
     const data = await contract.fetchProjectItems();
