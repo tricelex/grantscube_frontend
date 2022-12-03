@@ -11,6 +11,8 @@ import instagram from './instagram.png';
 import telegram from './telegram.png';
 import twitter from './twitter.png';
 import upload from './upload.png';
+import grants_logo from './grants_logo.png';
+import nft0 from './nft0.jpg';
 import nft1 from './nft1.png';
 import nft2 from './nft2.png';
 import nft3 from './nft3.png';
@@ -48,10 +50,12 @@ export default {
   logo02,
   menu,
   discord,
+  grants_logo,
   instagram,
   telegram,
   twitter,
   upload,
+  nft0,
   nft1,
   nft2,
   nft3,
