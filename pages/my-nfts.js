@@ -10,11 +10,11 @@ const MyNFTs = () => {
   const { fetchMyNFTsOrListedNFTs, currentAccount } = useContext(ProjectContext);
   const [nfts, setNfts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [activeSelect, setActiveSelect] = useState('Recently added');
+  const [activeSelect] = useState('Recently added');
 
   useEffect(() => {
     fetchMyNFTsOrListedNFTs('fetchMyNFTs')
-      .then((items) => {
+      .then(() => {
         setIsLoading(true);
       });
   }, []);

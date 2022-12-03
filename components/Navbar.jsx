@@ -5,7 +5,7 @@ import Image from 'next/legacy/image';
 import Link from 'next/link';
 
 import images from '../assets/index';
-import { Button } from './index';
+import Button from './Button';
 import { ProjectContext } from '../context/ProjectContext';
 
 const MenuItems = ({ isMobile, active, setActive, setIsOpen }) => {
