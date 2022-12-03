@@ -1,4 +1,38 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+![GrantsCube](grantsCube.png)
+
+## GrantsCube Decentralized Crowdfunding DApp for Web3 Creators in Africa
+
+This is a crowdfunding dapp intended showcase African creatives in the web3 space, where they can create projects they want to be funded by the community. Contributors get a minted NFT representing each projects the have funded as a memento of sorts.
+
+The Contracts [`grantscube_contracts`](https://github.com/tricelex/grantscube_contracts) are written in Solidity,with the aid of Hardhat and ApeWorkx for Deployment and local testing.
+
+While the frontend is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) and deployed on Vercel.
+
+## Contracts
+
+**ProjectFactory.sol**
+
+The first contract is the Factory Contract. This contract is responsible for creating and maintaining a list of all Project contracts. ProjectFactory also offers a contribute method which can be used to contribute directly to a Project.
+
+**Project.sol**
+
+This contract contains all of the logic around how a crowdfunding project should operate. Projects are "locked" to their Funding Hub and can only receive funds sent thru the associated FundingHub contract address.
+
+**GrantsCubeNFTFactory.sol**
+
+Thecontract is the NFT Factory Contract. This contract is responsible for creating and maintaining a list of all NFT contracts representing projects.
+
+**GrantsCubeNft.sol**
+
+This is an ERC721 contract Representing tokens minted to contributors on succesful donation.
+
+## Deployment
+
+The Contract is deployed on Polygon's zkEVM Test Net [`GrantsCube Contract`](https://explorer.public.zkevm-test.net/address/0x6000725847255dDAA1425C73244a9805B31B6d1A/)
+
+The front end is lie at [`GrantsCube`](http://grantscube-frontend.vercel.app/)
+
+Contracts Repo is at [`grantscube_contracts`](https://github.com/tricelex/grantscube_contracts)
 
 ## Getting Started
 
